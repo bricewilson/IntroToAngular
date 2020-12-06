@@ -116,6 +116,86 @@
           }
         }
       }
+    },
+    "book-library": {
+      "projectType": "library",
+      "root": "projects/book-library",
+      "sourceRoot": "projects/book-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/book-library/tsconfig.lib.json",
+            "project": "projects/book-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/book-library/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/book-library/src/test.ts",
+            "tsConfig": "projects/book-library/tsconfig.spec.json",
+            "karmaConfig": "projects/book-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/book-library/tsconfig.lib.json",
+              "projects/book-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "reader-library": {
+      "projectType": "library",
+      "root": "projects/reader-library",
+      "sourceRoot": "projects/reader-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/reader-library/tsconfig.lib.json",
+            "project": "projects/reader-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/reader-library/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/reader-library/src/test.ts",
+            "tsConfig": "projects/reader-library/tsconfig.spec.json",
+            "karmaConfig": "projects/reader-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/reader-library/tsconfig.lib.json",
+              "projects/reader-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "booktracker"
 }

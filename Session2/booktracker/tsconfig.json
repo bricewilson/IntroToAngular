@@ -17,6 +17,16 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "book-library": [
+        "dist/book-library/book-library",
+        "dist/book-library"
+      ],
+      "reader-library": [
+        "dist/reader-library/reader-library",
+        "dist/reader-library"
+      ]
+    }
   }
 }
