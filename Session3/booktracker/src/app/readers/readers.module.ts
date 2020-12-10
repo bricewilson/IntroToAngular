@@ -6,12 +6,14 @@ import { ReadersRoutingModule } from './readers-routing.module';
 import { AddReaderComponent } from './add-reader/add-reader.component';
 import { EditReaderComponent } from './edit-reader/edit-reader.component';
 import { ReaderLibraryModule } from 'reader-library';
+import { BadgeComponent } from './badge/badge.component';
 
 
 @NgModule({
   declarations: [
     AddReaderComponent,
-    EditReaderComponent
+    EditReaderComponent,
+    BadgeComponent
   ],
   imports: [
     CommonModule,
