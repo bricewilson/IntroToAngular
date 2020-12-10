@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../models/book';
 import { DataService } from '../core/data.service';
+import { allBooks, allReaders } from 'src/app/data';
 
 @Component({
   selector: 'app-library',
@@ -16,7 +17,7 @@ export class LibraryComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.allBooks = this.dataService.getAllBooks();
+    this.allBooks = allBooks;
     this.totalBookCount = this.allBooks.length;
   }
 
