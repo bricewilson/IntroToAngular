@@ -6,6 +6,7 @@ import { Reader } from "src/app/models/reader";
 import { DataService } from 'src/app/core/data.service';
 import { AlerterService } from '../core/alerter.service';
 import { LoggerService } from '../core/logger.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,8 +26,20 @@ export class DashboardComponent implements OnInit {
   
   ngOnInit() {
 
-    this.allBooks = this.dataService.getAllBooks();
-    this.allReaders = this.dataService.getAllReaders();
+    this.dataService.getAllBooks()
+      .pipe(
+        tap(books => console.log(books)),
+      )
+      .subscribe(
+        books => this.allBooks = books,
+        err => console.error(err),
+        () => console.log('All done getting books')
+      );
+    this.dataService.getAllReaders()
+      .subscribe(
+        readers => this.allReaders = readers,
+        err => console.error(err)
+      );
     this.mostPopularBook = this.dataService.mostPopularBook;
 
     this.title.setTitle(`Book Tracker`);

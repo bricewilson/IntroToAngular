@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-badge',
@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BadgeComponent implements OnInit {
 
-  readerName: string = 'not set';
+  @Input() readerName: string = 'not set';
+  @Output() badgeChanged = new EventEmitter<string>();
 
   constructor() { }
 
@@ -16,7 +17,7 @@ export class BadgeComponent implements OnInit {
   }
 
   updateBadge(badge: string) {
-
+    this.badgeChanged.emit(badge);
   }
 
 }

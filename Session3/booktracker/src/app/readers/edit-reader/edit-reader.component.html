@@ -39,4 +39,4 @@
     </form>
   </div>
 </div>
-<app-badge></app-badge>
+<app-badge [readerName]="selectedReader.name" (badgeChanged)="onBadgeChanged($event)"></app-badge>

@@ -21,4 +21,8 @@ export class LibraryComponent implements OnInit {
     this.totalBookCount = this.allBooks.length;
   }
 
+  onIncrease(amount: number) {
+    this.totalBookCount += amount;
+  }
+
 }
