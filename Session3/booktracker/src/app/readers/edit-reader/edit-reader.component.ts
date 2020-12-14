@@ -18,7 +18,11 @@ export class EditReaderComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private dataService: DataService,
-              private badgeService: BadgeService) { }
+              private badgeService: BadgeService) { 
+                this.badgeService.badge$.subscribe(
+                  newBadge => this.currentBadge = newBadge
+                );
+              }
 
   ngOnInit() {
     let readerID: number = parseInt(this.route.snapshot.params['id']);
@@ -30,7 +34,7 @@ export class EditReaderComponent implements OnInit {
     console.warn('Save reader not yet implemented.');
   }
 
-  onBadgeChanged($event) {
-    this.currentBadge = $event;
-  }
+  // onBadgeChanged($event) {
+  //   this.currentBadge = $event;
+  // }
 }

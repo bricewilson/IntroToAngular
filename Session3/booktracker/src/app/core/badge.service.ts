@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BadgeService {
+
+  private badgeSource = new Subject<string>();
+  badge$ = this.badgeSource.asObservable();
 
   constructor() { }
 
@@ -19,6 +23,10 @@ export class BadgeService {
       return 'Getting Started';
     }
     
+  }
+
+  update(newBadge: string) {
+    this.badgeSource.next(newBadge);
   }
 
 }
