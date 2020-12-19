@@ -6,8 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { BooksModule } from './books/books.module';
-import { ReadersModule } from './readers/readers.module';
 import { LibraryComponent } from './library/library.component';
 import { InventoryComponent } from './inventory/inventory.component';
 
@@ -22,9 +20,7 @@ import { InventoryComponent } from './inventory/inventory.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    BooksModule,
-    ReadersModule
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

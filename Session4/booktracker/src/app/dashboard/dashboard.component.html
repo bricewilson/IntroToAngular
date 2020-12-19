@@ -8,7 +8,7 @@
         <div class="panel-body">
         <li *ngFor='let book of allBooks'>
           <i>{{book.title}}</i>
-          <a [routerLink]="['/editbook', book.bookID]"> Edit </a>
+          <a [routerLink]="['/books/editbook', book.bookID]"> Edit </a>
           <a (click)="deleteBook(book.bookID)">Delete</a>
         </li>
         </div>
@@ -24,7 +24,7 @@
         <div class="panel-body">
         <li *ngFor='let reader of allReaders'>
           {{reader.name}}
-          <a [routerLink]="['/editreader', reader.readerID]">Edit</a>
+          <a [routerLink]="['/readers/editreader', reader.readerID]">Edit</a>
           <a (click)="deleteReader(reader.readerID)"> Delete </a>
         </li>
         </div>
